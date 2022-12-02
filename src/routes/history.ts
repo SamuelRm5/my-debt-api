@@ -10,4 +10,9 @@ router.post('/', async ( req, res ) => {
     res.json( await historyServices.addHistory( req.body ))
 })
 
+router.delete('/:id', async ( req, res ) => {
+    const { id } = req.params;
+    res.json( await historyServices.deleteHistory( id ))
+})
+
 export default router;

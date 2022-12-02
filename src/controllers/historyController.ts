@@ -42,3 +42,22 @@ export const addHistory = async ( data: Data ) => {
     }
 
 }
+
+
+export const deleteHistory = async ( id: String ) => {
+
+    try {
+        
+        await History.findByIdAndDelete( id );
+
+    } catch (error) {
+        return {
+            ok: false
+        }
+    }
+
+    return {
+        ok: true
+    }
+
+}
